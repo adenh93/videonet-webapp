@@ -1,11 +1,11 @@
 import React from "react";
 import { renderWithTheme } from "../../../../utils/renderWithTheme";
-import Navbar from "../Navbar";
+import Content from "../Content";
 import "jest-styled-components";
 
-describe("Navbar component", () => {
+describe("Content component", () => {
   it("renders correctly", () => {
-    const tree = renderWithTheme(<Navbar>Test</Navbar>).toJSON();
+    const tree = renderWithTheme(<Content>Test</Content>).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

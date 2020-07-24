@@ -1,15 +1,14 @@
 import React from "react";
+import { Background } from "../Browse/Styles";
 import { Header } from "../../components/Typography";
-import { Background } from "./Styles";
 import { Content } from "../../components/UI";
 
-const Home: React.FC = () => (
+const WatchList: React.FC = () => (
   <Background>
     <Content>
-      <Header>All of your favourites.</Header>
-      <Header>One place.</Header>
+      <Header>Hello from Watchlist</Header>
     </Content>
   </Background>
 );
 
-export default Home;
+export default WatchList;

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Navbar Typography component renders correctly 1`] = `
+exports[`Navbar component renders correctly 1`] = `
 .c0 {
   position: absolute;
   display: inline-block;

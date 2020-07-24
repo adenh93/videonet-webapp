@@ -1,5 +1,5 @@
 import React from "react";
-import { createBrowserHistory } from "history";
+import { withRouter, RouteComponentProps } from "react-router-dom";
 import {
   Nav,
   Brand,
@@ -10,22 +10,20 @@ import {
 } from "./Styles";
 import { NavRoute } from "../../../types/interfaces";
 
-export interface NavbarProps {
+export interface NavbarProps extends RouteComponentProps {
   brandImg?: string;
   routes?: NavRoute[];
   profileImg?: string;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ brandImg, routes, profileImg }) => {
-  const history = createBrowserHistory();
-
-  const onClickBrand = () => {
-    history.push("/");
-  };
-
-  const onClickNavItem = (route: string) => {
-    history.push(route);
-  };
+const Navbar: React.FC<NavbarProps> = ({
+  brandImg,
+  routes,
+  profileImg,
+  history,
+}) => {
+  const onClickBrand = (): void => history.push("/");
+  const onClickNavItem = (route: string): void => history.push(route);
 
   const navItems = routes && (
     <NavItemList>
@@ -52,4 +50,4 @@ const Navbar: React.FC<NavbarProps> = ({ brandImg, routes, profileImg }) => {
   );
 };
 
-export default Navbar;
+export default withRouter(Navbar);

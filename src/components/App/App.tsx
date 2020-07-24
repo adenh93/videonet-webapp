@@ -1,8 +1,9 @@
 import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 import Routes from "../Routes";
-import Navbar from "../UI/Navbar";
-import { brand, profile } from "../../assets/img/";
 import { Container } from "./Styles";
+import { Navbar } from "../UI";
+import { brand, profile } from "../../assets/img/";
 import { NavRoute } from "../../types/interfaces";
 
 const routes: NavRoute[] = [
@@ -14,8 +15,10 @@ const routes: NavRoute[] = [
 function App() {
   return (
     <Container>
-      <Navbar brandImg={brand} routes={routes} profileImg={profile} />
-      <Routes />
+      <Router>
+        <Navbar brandImg={brand} routes={routes} profileImg={profile} />
+        <Routes />
+      </Router>
     </Container>
   );
 }
