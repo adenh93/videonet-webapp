@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Subheader Typography component renders correctly 1`] = `
+.c0 {
+  font-size: 3.2rem;
+  font-weight: 600;
+  text-shadow: 0 0.4rem 0.4rem rgba(0,0,0,0.25);
+  line-height: 4.4rem;
+  -webkit-letter-spacing: 0.05em;
+  -moz-letter-spacing: 0.05em;
+  -ms-letter-spacing: 0.05em;
+  letter-spacing: 0.05em;
+}
+
+<h3
+  className="c0"
+>
+  Test
+</h3>
+`;

@@ -28,7 +28,10 @@
     "typescript": "~3.7.2"
   },
   "devDependencies": {
-    "@types/styled-components": "^5.1.1"
+    "@types/react-test-renderer": "^16.9.2",
+    "@types/styled-components": "^5.1.1",
+    "jest-styled-components": "^7.0.2",
+    "react-test-renderer": "^16.13.1"
   },
   "eslintConfig": {
     "extends": "react-app"
