@@ -21,6 +21,7 @@ const theme = {
     title: "4.8rem",
     subTitle: "1.8rem",
     body: "1.8rem",
+    navItem: "1.8rem",
   },
   fontWeights: {
     light: 300,

@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar Typography component renders correctly 1`] = `
+.c0 {
+  position: absolute;
+  display: inline-block;
+  width: calc(100% - 4rem);
+  z-index: 3;
+  top: 2rem;
+  left: 2rem;
+}
+
+.c1 {
+  float: right;
+}
+
+.c2 {
+  border-radius: 20rem;
+  width: 6rem;
+}
+
+<nav
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <img
+      className="c2"
+    />
+  </div>
+</nav>
+`;

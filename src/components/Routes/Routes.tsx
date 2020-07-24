@@ -1,5 +1,10 @@
 import React, { FC } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import Home from "../../pages/Home";
 
 const Routes: FC = () => (
@@ -9,7 +14,7 @@ const Routes: FC = () => (
         <Home />
       </Route>
       <Route>
-        <Home />
+        <Redirect to="/Home" />
       </Route>
     </Switch>
   </Router>

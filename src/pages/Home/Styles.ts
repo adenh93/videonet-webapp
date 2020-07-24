@@ -12,7 +12,7 @@ export const Background = styled.div`
     url(${cars});
   background-size: cover;
   background-position: top;
-  clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%);
   position: relative;
 `;
 
