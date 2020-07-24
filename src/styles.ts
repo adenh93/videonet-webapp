@@ -26,6 +26,7 @@ html {
 }
 body {
   margin: 1rem;
+  color: ${({ theme }) => theme.palette.text.main};
   background: ${({ theme }) => theme.palette.background};
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
