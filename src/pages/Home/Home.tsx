@@ -1,20 +1,14 @@
 import React from "react";
-import {
-  Header,
-  Subheader,
-  Body,
-  Title,
-  Subtitle,
-} from "../../components/Typography";
+import { Header } from "../../components/Typography";
+import { Background, Content } from "./Styles";
 
 const Home: React.FC = () => (
-  <div>
-    <Header>Header</Header>
-    <Subheader>Subheader</Subheader>
-    <Body>Body</Body>
-    <Title>Title</Title>
-    <Subtitle>Subtitle</Subtitle>
-  </div>
+  <Background>
+    <Content>
+      <Header>All of your favourites.</Header>
+      <Header>One place.</Header>
+    </Content>
+  </Background>
 );
 
 export default Home;

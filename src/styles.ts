@@ -25,7 +25,7 @@ html {
   font-size: 62.5%;
 }
 body {
-  margin: 1rem;
+  margin: ${({ theme }) => theme.margins.gutter}rem;
   color: ${({ theme }) => theme.palette.text.main};
   background: ${({ theme }) => theme.palette.background};
   box-sizing: border-box;
