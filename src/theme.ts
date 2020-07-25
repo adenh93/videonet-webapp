@@ -4,7 +4,7 @@ const theme = {
     text: {
       light: "#CFD8DC",
       main: "#f9f9f9",
-      placeholder: "#333333",
+      input: "#333333",
     },
     button: {
       primary: "#BA68C8",
@@ -19,6 +19,7 @@ const theme = {
     subTitle: "1.8rem",
     body: "1.8rem",
     navItem: "1.8rem",
+    input: "1.8rem",
   },
   fontWeights: {
     light: 300,

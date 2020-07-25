@@ -1,11 +1,11 @@
 import React from "react";
 import { renderWithTheme } from "../../../../utils/renderWithTheme";
-import Content from "../Content";
+import Input from "../Input";
 import "jest-styled-components";
 
-describe("Content UI component", () => {
+describe("Input UI component", () => {
   it("renders correctly", () => {
-    const tree = renderWithTheme(<Content>Test</Content>).toJSON();
+    const tree = renderWithTheme(<Input>Test</Input>).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
