@@ -40,6 +40,7 @@ const theme = {
     content: 80,
   },
   borderRadius: {
+    light: "0.5rem",
     rounded: "20rem",
   },
 };

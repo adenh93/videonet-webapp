@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { Background } from "./Styles";
 import { Header, Subheader } from "../../components/Typography";
-import { Content, SearchInput, Section } from "../../components/UI";
+import { Content, SearchInput, Section, MovieList } from "../../components/UI";
 import { SEARCH_MOVIES } from "../../graphql/query";
 import { useQuery } from "react-apollo";
 import { Query } from "../../graphql/types";
@@ -15,11 +15,28 @@ const Browse: React.FC = () => {
     if (query) refetch({ query });
   };
 
-  const getHeading = () => {
+  const getSubheader = () => {
+    const query = searchInput.current?.value;
+    return (
+      <Subheader>
+        {query ? `Search Results For "${query}":` : "Discovered For You:"}
+      </Subheader>
+    );
+  };
+
+  const getContents = () => {
     if (loading) return <Subheader>Loading results...</Subheader>;
     else if (error)
       return <Subheader>An error occurred while loading results.</Subheader>;
-    else return <Subheader>Search results</Subheader>;
+    else
+      return (
+        <>
+          {getSubheader()}
+          <Section mt={5}>
+            <MovieList movies={data?.search!} onSelectMovie={() => {}} />
+          </Section>
+        </>
+      );
   };
 
   return (
@@ -33,7 +50,7 @@ const Browse: React.FC = () => {
             placeholder="Enter a title, description, etc..."
           />
         </Section>
-        <Section mt={5}>{getHeading()}</Section>
+        <Section mt={5}>{getContents()}</Section>
       </Content>
     </Background>
   );
