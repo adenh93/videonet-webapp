@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Section UI component renders correctly 1`] = `
+.c0 {
+  margin-top: 5rem;
+  margin-bottom: 5 rem;
+}
+
+<div
+  className="c0"
+>
+  Test
+</div>
+`;

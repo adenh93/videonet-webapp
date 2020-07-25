@@ -2,10 +2,6 @@
 
 exports[`Input UI component renders correctly 1`] = `
 .c0 {
-  position: relative;
-}
-
-.c1 {
   color: #333333;
   font-size: 1.8rem;
   font-weight: 300;
@@ -18,19 +14,15 @@ exports[`Input UI component renders correctly 1`] = `
   height: 6rem;
   width: 73.5rem;
   border-radius: 20rem;
-  padding: 1rem 12rem 1rem 8rem;
+  padding: 1rem 14rem 1rem 8rem;
   border: 0;
   -webkit-filter: drop-shadow(0 0.4rem 0.4rem rgba(0,0,0,0.25));
   filter: drop-shadow(0 0.4rem 0.4rem rgba(0,0,0,0.25));
 }
 
-<span
+<input
   className="c0"
 >
-  <input
-    className="c1"
-  >
-    Test
-  </input>
-</span>
+  Test
+</input>
 `;

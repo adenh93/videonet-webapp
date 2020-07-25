@@ -14,18 +14,3 @@ exports[`Content UI component renders correctly 1`] = `
   Test
 </div>
 `;
-
-exports[`Content component renders correctly 1`] = `
-.c0 {
-  position: absolute;
-  width: 80%;
-  left: calc((100% - 80%) / 2);
-  top: 15%;
-}
-
-<div
-  className="c0"
->
-  Test
-</div>
-`;
