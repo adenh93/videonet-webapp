@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Background } from "./Styles";
 import { Header, Subheader } from "../../components/Typography";
 import { Content, SearchInput, Section, MovieList } from "../../components/UI";
@@ -8,17 +8,16 @@ import { Query } from "../../graphql/types";
 import { useHistory } from "react-router";
 
 const Browse: React.FC = () => {
-  const history = useHistory();
-  const searchInput = useRef<HTMLInputElement>(null);
-  const { loading, error, data, refetch } = useQuery<Query>(SEARCH_MOVIES);
+  const history = useHistory<{ query: string }>();
+  const queryState = history.location.state?.query;
+  const [query, setQuery] = useState<string>(queryState);
+
+  const { loading, error, data, refetch } = useQuery<Query>(SEARCH_MOVIES, {
+    variables: { query: history.location.state?.query },
+  });
 
   const onSelectMovie = (id: number) => history.push(`/Details/${id}`);
-  const onSearch = () => refetch({ query: searchInput.current?.value });
-
-  const getSubheader = (): string => {
-    const query = searchInput.current?.value;
-    return query ? `Search Results For "${query}":` : "Discovered For You:";
-  };
+  const onSearch = () => refetch({ query });
 
   const getContents = () => {
     if (loading) return <Subheader>Loading results...</Subheader>;
@@ -27,7 +26,7 @@ const Browse: React.FC = () => {
     else
       return (
         <>
-          <Subheader>{getSubheader()}</Subheader>
+          <Subheader>Search Results</Subheader>
           <Section mt={5}>
             <MovieList movies={data?.search!} onSelectMovie={onSelectMovie} />
           </Section>
@@ -41,7 +40,8 @@ const Browse: React.FC = () => {
         <Header>Browse All Titles</Header>
         <Section mt={5}>
           <SearchInput
-            ref={searchInput}
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
             onSearch={onSearch}
             placeholder="Enter a title, description, etc..."
           />
