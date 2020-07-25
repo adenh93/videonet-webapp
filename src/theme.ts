@@ -8,8 +8,8 @@ const theme = {
     },
     button: {
       primary: "#BA68C8",
-      secondary: "#9CCC65",
-      success: "#CFD8DC",
+      secondary: "#CFD8DC",
+      success: "#9CCC65",
     },
   },
   fontSize: {

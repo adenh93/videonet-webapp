@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Content } from "../../components/UI";
+import Button from "../../components/UI/Button";
 
 interface BackgroundProps {
   image: string;

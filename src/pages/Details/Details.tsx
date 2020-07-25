@@ -3,8 +3,8 @@ import { useParams } from "react-router";
 import { useQuery } from "react-apollo";
 import { GET_MOVIE_DETAILS } from "../../graphql/query";
 import { Query } from "../../graphql/types";
-import { Title, Subtitle, Body } from "../../components/Typography";
-import { Section } from "../../components/UI";
+import { landscape } from "../../assets/img/";
+import { MovieInfo, Toolbar } from "./components";
 import {
   Background,
   Container,
@@ -12,7 +12,6 @@ import {
   PosterContainer,
   Poster,
 } from "./Styles";
-import { landscape } from "../../assets/img/";
 
 const Details: React.FC = () => {
   const params = useParams<{ movieId: string }>();
@@ -27,29 +26,23 @@ const Details: React.FC = () => {
       ? `${baseImageUrl}/w1280${data?.details.backdrop_path}`
       : landscape;
 
-  const getContent = () =>
-    loading ? null : (
-      <>
-        <DetailsContainer>
-          <Title>{data?.details.title}</Title>
-          <Subtitle>
-            {data?.details.release_date.substr(0, 4)} |{" "}
-            {data?.details.genres.map((g) => g.name).join(", ")} |{" "}
-            {data?.details.status}
-          </Subtitle>
-          <Section mt={2.5}>
-            <Body>{data?.details.overview}</Body>
-          </Section>
-        </DetailsContainer>
-        <PosterContainer>
-          <Poster src={`${baseImageUrl}/w500${data?.details.poster_path}`} />
-        </PosterContainer>
-      </>
-    );
-
   return (
     <Background image={getBackgroundImage()}>
-      <Container>{getContent()}</Container>
+      <Container>
+        {loading ? null : (
+          <>
+            <DetailsContainer>
+              <MovieInfo {...data!.details!} />
+              <Toolbar />
+            </DetailsContainer>
+            <PosterContainer>
+              <Poster
+                src={`${baseImageUrl}/w500${data?.details.poster_path}`}
+              />
+            </PosterContainer>
+          </>
+        )}
+      </Container>
     </Background>
   );
 };

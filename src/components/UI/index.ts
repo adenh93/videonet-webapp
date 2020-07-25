@@ -5,6 +5,7 @@ import SearchInput from "./SearchInput";
 import Section from "./Section";
 import MovieList from "./MovieList";
 import MovieListItem from "./MovieListItem";
+import Button from "./Button";
 
 export {
   Content,
@@ -14,4 +15,5 @@ export {
   Section,
   MovieList,
   MovieListItem,
+  Button,
 };
