@@ -2,17 +2,25 @@ import React from "react";
 import { Container, ToolbarButton } from "./Styles";
 import { check, thumb } from "../../../../assets/icons";
 
-interface ToolbarProps {}
+interface ToolbarProps {
+  onClickWatched: () => void;
+  onClickLike: () => void;
+  onClickBack: () => void;
+}
 
-const Toolbar: React.FC<ToolbarProps> = () => (
+const Toolbar: React.FC<ToolbarProps> = ({
+  onClickWatched,
+  onClickLike,
+  onClickBack,
+}) => (
   <Container>
-    <ToolbarButton icon={check} outline>
+    <ToolbarButton icon={check} onClick={onClickWatched} outline>
       Watched
     </ToolbarButton>
-    <ToolbarButton icon={thumb} color="success" outline>
+    <ToolbarButton icon={thumb} onClick={onClickLike} color="success" outline>
       Liked
     </ToolbarButton>
-    <ToolbarButton color="secondary" outline>
+    <ToolbarButton onClick={onClickBack} color="secondary" outline>
       Back
     </ToolbarButton>
   </Container>
