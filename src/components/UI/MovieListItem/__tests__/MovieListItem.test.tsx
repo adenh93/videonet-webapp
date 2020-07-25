@@ -12,6 +12,7 @@ describe("MovieList UI component", () => {
         vote_average={5}
         vote_count={5}
         release_date="2020-10-10"
+        onSelectMovie={() => {}}
       >
         Test
       </MovieListItem>

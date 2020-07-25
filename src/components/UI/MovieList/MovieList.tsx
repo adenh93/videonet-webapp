@@ -5,14 +5,14 @@ import MovieListItem from "../MovieListItem";
 
 interface MovieListProps {
   movies: SearchResult[];
-  onSelectMovie: (e: React.MouseEvent) => void;
+  onSelectMovie: (movieId: number) => void;
 }
 
 const MovieList: React.FC<MovieListProps> = ({ movies, onSelectMovie }) => (
   <ListContainer>
     {movies.map((movie) => (
       <MovieItemContainer key={movie.id}>
-        <MovieListItem {...movie} />
+        <MovieListItem {...movie} onSelectMovie={onSelectMovie} />
       </MovieItemContainer>
     ))}
   </ListContainer>

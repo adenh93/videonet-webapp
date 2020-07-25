@@ -16,8 +16,13 @@ export const GET_MOVIE_DETAILS = gql`
       id
       title
       overview
+      release_date
       poster_path
       backdrop_path
+      status
+      genres {
+        name
+      }
     }
   }
 `;

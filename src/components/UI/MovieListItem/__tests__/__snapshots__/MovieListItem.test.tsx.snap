@@ -20,6 +20,7 @@ exports[`MovieList UI component renders correctly 1`] = `
 
 <img
   className="c0"
+  onClick={[Function]}
   src="https://image.tmdb.org/t/p//w185/undefined"
 />
 `;

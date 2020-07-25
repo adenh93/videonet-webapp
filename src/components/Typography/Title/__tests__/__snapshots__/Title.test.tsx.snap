@@ -4,6 +4,7 @@ exports[`Title Typography component renders correctly 1`] = `
 .c0 {
   font-size: 4.8rem;
   font-weight: 700;
+  text-transform: uppercase;
   line-height: 6.5rem;
   -webkit-letter-spacing: 0.1em;
   -moz-letter-spacing: 0.1em;

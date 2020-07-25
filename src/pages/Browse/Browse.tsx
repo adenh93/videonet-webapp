@@ -5,23 +5,19 @@ import { Content, SearchInput, Section, MovieList } from "../../components/UI";
 import { SEARCH_MOVIES } from "../../graphql/query";
 import { useQuery } from "react-apollo";
 import { Query } from "../../graphql/types";
+import { useHistory } from "react-router";
 
 const Browse: React.FC = () => {
-  const { loading, error, data, refetch } = useQuery<Query>(SEARCH_MOVIES);
+  const history = useHistory();
   const searchInput = useRef<HTMLInputElement>(null);
+  const { loading, error, data, refetch } = useQuery<Query>(SEARCH_MOVIES);
 
-  const onSearch = (): void => {
-    const query = searchInput.current?.value;
-    if (query) refetch({ query });
-  };
+  const onSelectMovie = (id: number) => history.push(`/Details/${id}`);
+  const onSearch = () => refetch({ query: searchInput.current?.value });
 
-  const getSubheader = () => {
+  const getSubheader = (): string => {
     const query = searchInput.current?.value;
-    return (
-      <Subheader>
-        {query ? `Search Results For "${query}":` : "Discovered For You:"}
-      </Subheader>
-    );
+    return query ? `Search Results For "${query}":` : "Discovered For You:";
   };
 
   const getContents = () => {
@@ -31,9 +27,9 @@ const Browse: React.FC = () => {
     else
       return (
         <>
-          {getSubheader()}
+          <Subheader>{getSubheader()}</Subheader>
           <Section mt={5}>
-            <MovieList movies={data?.search!} onSelectMovie={() => {}} />
+            <MovieList movies={data?.search!} onSelectMovie={onSelectMovie} />
           </Section>
         </>
       );

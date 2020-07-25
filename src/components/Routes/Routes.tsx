@@ -1,9 +1,13 @@
 import React, { FC } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { Home, Browse, WatchList } from "../../pages";
+import Details from "../../pages/Details";
 
 const Routes: FC = () => (
   <Switch>
+    <Route path="/Details/:movieId">
+      <Details />
+    </Route>
     <Route path="/Watchlist">
       <WatchList />
     </Route>
