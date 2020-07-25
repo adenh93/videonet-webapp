@@ -4,40 +4,50 @@ import { useQuery } from "react-apollo";
 import { GET_MOVIE_DETAILS } from "../../graphql/query";
 import { Query } from "../../graphql/types";
 import { Title, Subtitle, Body } from "../../components/Typography";
-import { Background } from "./Styles";
-import { Content } from "../../components/UI";
+import { Section } from "../../components/UI";
+import {
+  Background,
+  Container,
+  DetailsContainer,
+  PosterContainer,
+  Poster,
+} from "./Styles";
 import { landscape } from "../../assets/img/";
 
 const Details: React.FC = () => {
   const params = useParams<{ movieId: string }>();
+  const baseImageUrl = process.env.REACT_APP_POSTER_URL;
 
   const { loading, data } = useQuery<Query>(GET_MOVIE_DETAILS, {
     variables: { movieId: +params.movieId },
   });
 
   const getBackgroundImage = () =>
-    loading
-      ? landscape
-      : `${process.env.REACT_APP_POSTER_URL}/w1280${data?.details.backdrop_path}`;
+    loading ? landscape : `${baseImageUrl}/w1280${data?.details.backdrop_path}`;
 
   const getContent = () =>
-    loading ? (
-      <Title>Loading...</Title>
-    ) : (
+    loading ? null : (
       <>
-        <Title>{data?.details.title}</Title>
-        <Subtitle>
-          {data?.details.release_date.substr(0, 4)} |{" "}
-          {data?.details.genres.map((g) => g.name).join(", ")} |{" "}
-          {data?.details.status}
-        </Subtitle>
-        <Body>{data?.details.overview}</Body>
+        <DetailsContainer>
+          <Title>{data?.details.title}</Title>
+          <Subtitle>
+            {data?.details.release_date.substr(0, 4)} |{" "}
+            {data?.details.genres.map((g) => g.name).join(", ")} |{" "}
+            {data?.details.status}
+          </Subtitle>
+          <Section mt={2.5}>
+            <Body>{data?.details.overview}</Body>
+          </Section>
+        </DetailsContainer>
+        <PosterContainer>
+          <Poster src={`${baseImageUrl}/w500${data?.details.poster_path}`} />
+        </PosterContainer>
       </>
     );
 
   return (
     <Background image={getBackgroundImage()}>
-      <Content>{getContent()}</Content>
+      <Container>{getContent()}</Container>
     </Background>
   );
 };
