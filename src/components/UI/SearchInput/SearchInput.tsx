@@ -4,16 +4,18 @@ import { search } from "../../../assets/icons";
 import { InputContainer, InputIcon, SearchButton } from "./Styles";
 
 interface SearchInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  onSearch: (e: React.FormEvent<HTMLButtonElement>) => void;
+  onSearch: (e: React.FormEvent) => void;
 }
 
 const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
   ({ onSearch, ...props }, ref) => (
-    <InputContainer>
-      <InputIcon src={search} />
-      <Input {...props} ref={ref} />
-      <SearchButton onClick={onSearch}>Search</SearchButton>
-    </InputContainer>
+    <form onSubmit={onSearch}>
+      <InputContainer>
+        <InputIcon src={search} />
+        <Input {...props} ref={ref} />
+        <SearchButton type="submit">Search</SearchButton>
+      </InputContainer>
+    </form>
   )
 );
 

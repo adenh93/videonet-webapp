@@ -55,23 +55,27 @@ exports[`SearchInput UI component renders correctly 1`] = `
   border-bottom-right-radius: 20rem;
 }
 
-<span
-  className="c0"
+<form
+  onSubmit={[Function]}
 >
-  <img
-    className="c1"
-    src="search.svg"
-  />
-  <input
-    className="c2"
+  <span
+    className="c0"
   >
-    Test
-  </input>
-  <button
-    className="c3"
-    onClick={[Function]}
-  >
-    Search
-  </button>
-</span>
+    <img
+      className="c1"
+      src="search.svg"
+    />
+    <input
+      className="c2"
+    >
+      Test
+    </input>
+    <button
+      className="c3"
+      type="submit"
+    >
+      Search
+    </button>
+  </span>
+</form>
 `;
