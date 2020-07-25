@@ -10,14 +10,17 @@ import { useHistory } from "react-router";
 const Browse: React.FC = () => {
   const history = useHistory<{ query: string }>();
   const queryState = history.location.state?.query;
-  const [query, setQuery] = useState<string>(queryState);
+  const [query, setQuery] = useState<string>(queryState || "");
 
   const { loading, error, data, refetch } = useQuery<Query>(SEARCH_MOVIES, {
-    variables: { query: history.location.state?.query },
+    variables: { query: queryState },
   });
 
   const onSelectMovie = (id: number) => history.push(`/Details/${id}`);
-  const onSearch = () => refetch({ query });
+  const onSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    refetch({ query });
+  };
 
   const getContents = () => {
     if (loading) return <Subheader>Loading results...</Subheader>;

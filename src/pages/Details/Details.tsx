@@ -23,7 +23,9 @@ const Details: React.FC = () => {
   });
 
   const getBackgroundImage = () =>
-    loading ? landscape : `${baseImageUrl}/w1280${data?.details.backdrop_path}`;
+    data?.details.backdrop_path
+      ? `${baseImageUrl}/w1280${data?.details.backdrop_path}`
+      : landscape;
 
   const getContent = () =>
     loading ? null : (
