@@ -1,7 +1,4 @@
 const theme = {
-  margins: {
-    gutter: 1,
-  },
   palette: {
     background: "#f9f9f9",
     text: {
@@ -33,6 +30,12 @@ const theme = {
     light: "0 0.2rem 0.2rem rgba(0, 0, 0, 0.25)",
     med: "0 0.4rem 0.4rem rgba(0, 0, 0, 0.25)",
     dark: "0.6rem 0.6rem 0.6rem rgba(0, 0, 0, 0.25)",
+  },
+  margins: {
+    gutter: 1,
+  },
+  widths: {
+    content: 80,
   },
 };
 
