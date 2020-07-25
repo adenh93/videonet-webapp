@@ -1,7 +1,7 @@
 import React from "react";
 import { Background } from "./Styles";
 import { Header, Subheader } from "../../components/Typography";
-import { Content, Input } from "../../components/UI";
+import { Content, Input, SearchInput } from "../../components/UI";
 import { search } from "../../assets/icons";
 
 const Home: React.FC = () => (
@@ -12,8 +12,8 @@ const Home: React.FC = () => (
       <div style={{ marginTop: "15rem" }}>
         <Subheader>Browse All Titles</Subheader>
         <div style={{ marginTop: "4rem" }}>
-          <Input
-            icon={search}
+          <SearchInput
+            onSearch={() => {}}
             placeholder="Enter a title, description, etc..."
           />
         </div>

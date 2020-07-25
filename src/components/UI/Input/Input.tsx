@@ -1,15 +1,18 @@
-import React from "react";
-import { InputContainer, StyledInput, InputIcon } from "./Styles";
+import styled from "styled-components";
 
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  icon?: string;
-}
-
-const Input: React.FC<InputProps> = ({ icon, ...props }) => (
-  <InputContainer>
-    {icon && <InputIcon src={icon} />}
-    <StyledInput {...props} />
-  </InputContainer>
-);
+const Input = styled.input`
+  color: ${({ theme }) => theme.palette.text.input};
+  font-size: ${({ theme }) => theme.fontSize.input};
+  font-weight: ${({ theme }) => theme.fontWeights.light};
+  background-color: ${({ theme }) => theme.palette.background};
+  font-family: "Lato", sans-serif;
+  letter-spacing: 0.03em;
+  height: 6rem;
+  width: 73.5rem;
+  border-radius: ${({ theme }) => theme.borderRadius.rounded};
+  padding: 1rem 14rem 1rem 8rem;
+  border: 0;
+  filter: drop-shadow(${({ theme }) => theme.shadows.med});
+`;
 
 export default Input;

@@ -20,6 +20,7 @@ const theme = {
     body: "1.8rem",
     navItem: "1.8rem",
     input: "1.8rem",
+    button: "2rem",
   },
   fontWeights: {
     light: 300,
@@ -37,6 +38,9 @@ const theme = {
   },
   widths: {
     content: 80,
+  },
+  borderRadius: {
+    rounded: "20rem",
   },
 };
 
