@@ -6,6 +6,7 @@ import Section from "./Section";
 import MovieList from "./MovieList";
 import MovieListItem from "./MovieListItem";
 import Button from "./Button";
+import Background from "./Background";
 
 export {
   Content,
@@ -16,4 +17,5 @@ export {
   MovieList,
   MovieListItem,
   Button,
+  Background,
 };

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
-import { Background } from "./Styles";
+import { HomeBackground as Background } from "./Styles";
 import { Header, Subheader } from "../../components/Typography";
 import { Content, SearchInput, Section } from "../../components/UI";
 

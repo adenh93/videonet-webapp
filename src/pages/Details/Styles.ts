@@ -1,23 +1,17 @@
 import styled from "styled-components";
-import { Content } from "../../components/UI";
-import Button from "../../components/UI/Button";
+import { Content, Background } from "../../components/UI";
 
 interface BackgroundProps {
   image: string;
 }
 
-export const Background = styled.div<BackgroundProps>`
-  height: calc(100vh - ${({ theme }) => theme.margins.gutter * 2}rem);
-  border-radius: 0.3rem;
+export const DetailsBackground = styled(Background)<BackgroundProps>`
   background-image: linear-gradient(
       to right,
       rgba(34, 34, 34, 0.85),
       rgba(34, 34, 34, 0.85)
     ),
     url(${({ image }) => image});
-  background-size: cover;
-  background-position: top;
-  position: relative;
 `;
 
 export const Container = styled(Content)`

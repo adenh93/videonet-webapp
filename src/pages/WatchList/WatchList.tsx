@@ -1,5 +1,5 @@
 import React from "react";
-import { Background } from "../Browse/Styles";
+import { WatchListBackground as Background } from "./Styles";
 import { Header } from "../../components/Typography";
 import { Content } from "../../components/UI";
 

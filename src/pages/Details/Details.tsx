@@ -6,7 +6,7 @@ import { Query } from "../../graphql/types";
 import { landscape } from "../../assets/img/";
 import { MovieInfo, Toolbar } from "./components";
 import {
-  Background,
+  DetailsBackground as Background,
   Container,
   DetailsContainer,
   PosterContainer,

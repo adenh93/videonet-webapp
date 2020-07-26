@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Background } from "./Styles";
+import { BrowseBackground as Background } from "./Styles";
 import { Header, Subheader } from "../../components/Typography";
 import { Content, SearchInput, Section, MovieList } from "../../components/UI";
 import { SEARCH_MOVIES } from "../../graphql/query";

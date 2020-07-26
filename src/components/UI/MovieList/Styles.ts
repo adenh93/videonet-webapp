@@ -5,6 +5,7 @@ export const ListContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-space-between;
+  height: 60vh;
 `;
 
 export const MovieItemContainer = styled.span`
