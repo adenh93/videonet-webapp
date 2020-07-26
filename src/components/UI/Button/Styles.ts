@@ -25,6 +25,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
     outline ? `2px solid ${theme.palette.button[color]}` : "none"};
   filter: drop-shadow(${({ theme }) => theme.shadows.dark});
   padding-left: ${({ icon }) => (icon ? "10%" : 0)};
+  transition: all 0.5s;
 
   &:disabled {
     cursor: not-allowed;
@@ -33,6 +34,10 @@ export const StyledButton = styled.button<StyledButtonProps>`
     background: ${({ color, outline, theme }) =>
       outline ? "none" : theme.palette.button.disabled};
     color: ${({ theme }) => theme.palette.button.disabled};
+  }
+
+  &:hover:not(:disabled) {
+    transform: scale(1.05);
   }
 `;
 

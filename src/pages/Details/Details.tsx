@@ -3,7 +3,7 @@ import { useHistory, useParams } from "react-router";
 import { useQuery } from "react-apollo";
 import { GET_MOVIE_DETAILS } from "../../graphql/query";
 import { Query } from "../../graphql/types";
-import { landscape } from "../../assets/img/";
+import { landscape, placeholder } from "../../assets/img/";
 import { MovieInfo, Toolbar } from "./components";
 import {
   DetailsBackground as Background,
@@ -35,17 +35,20 @@ const Details: React.FC = () => {
     },
   });
 
-  const getBackgroundImage = () =>
-    data?.details.backdrop_path
-      ? `${baseImageUrl}/w1280${data?.details.backdrop_path}`
-      : landscape;
+  const backdrop = data?.details.backdrop_path
+    ? `${baseImageUrl}/w1280${data?.details.backdrop_path}`
+    : landscape;
+
+  const poster = data?.details?.poster_path
+    ? `${baseImageUrl}/w500${data?.details.poster_path}`
+    : placeholder;
 
   const onClickWatched = (): void => setWatched(toggleWatched(data!.details!));
   const onClickLike = (): void => setLiked(toggleLiked(data!.details!.id));
   const onClickBack = (): void => history.goBack();
 
   return (
-    <Background image={getBackgroundImage()}>
+    <Background image={backdrop}>
       <Container>
         {!data ? null : (
           <>
@@ -60,9 +63,7 @@ const Details: React.FC = () => {
               />
             </DetailsContainer>
             <PosterContainer>
-              <Poster
-                src={`${baseImageUrl}/w500${data?.details.poster_path}`}
-              />
+              <Poster src={poster} />
             </PosterContainer>
           </>
         )}
