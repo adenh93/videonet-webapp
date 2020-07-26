@@ -6,7 +6,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "codegen": "graphql-codegen --config codegen.yml"
+    "codegen": "graphql-codegen --config codegen.yml",
+    "deploy": "serverless"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -36,7 +37,8 @@
     "@types/react-test-renderer": "^16.9.2",
     "@types/styled-components": "^5.1.1",
     "jest-styled-components": "^7.0.2",
-    "react-test-renderer": "^16.13.1"
+    "react-test-renderer": "^16.13.1",
+    "serverless": "^1.76.1"
   },
   "eslintConfig": {
     "extends": "react-app"

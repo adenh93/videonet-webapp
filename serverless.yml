@@ -1,0 +1,10 @@
+name: videonet
+
+videonet:
+  component: "@serverless/website"
+  inputs:
+    code:
+      src: build
+      hook: yarn build
+    region: ap-southeast-2
+    bucketName: videonet-web
