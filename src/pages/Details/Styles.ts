@@ -25,9 +25,16 @@ export const Container = styled(Content)`
 export const DetailsContainer = styled.div`
   width: 60%;
   margin-top: 5%;
+  @media (max-width: 1100px) {
+    width: 100%;
+  }
 `;
 
-export const PosterContainer = styled.div``;
+export const PosterContainer = styled.div`
+  @media (max-width: 1100px) {
+    display: none;
+  }
+`;
 
 export const Poster = styled.img`
   width: 31rem;

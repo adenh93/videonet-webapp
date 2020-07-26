@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { deviceWidths } from "../../../CONSTANTS";
 
 export const InputContainer = styled.span`
   position: relative;
@@ -26,4 +27,13 @@ export const SearchButton = styled.button`
   border: none;
   border-top-right-radius: ${({ theme }) => theme.borderRadius.rounded};
   border-bottom-right-radius: ${({ theme }) => theme.borderRadius.rounded};
+
+  @media (max-width: ${deviceWidths.tablet}) {
+    position: static;
+    margin-left: 100%;
+    margin-top: 1rem;
+    border-radius: ${({ theme }) => theme.borderRadius.rounded};
+    filter: drop-shadow(${({ theme }) => theme.shadows.dark});
+    width: 100%;
+  }
 `;

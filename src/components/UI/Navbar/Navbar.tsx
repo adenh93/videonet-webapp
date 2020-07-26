@@ -26,17 +26,19 @@ const Navbar: React.FC<NavbarProps> = ({
   const onClickNavItem = (route: string): void => history.push(route);
 
   const navItems = routes && (
-    <NavItemList>
-      {routes.map(({ display, route }) => (
-        <NavItem
-          key={route}
-          active={history.location.pathname === route}
-          onClick={() => onClickNavItem(route)}
-        >
-          {display}
-        </NavItem>
-      ))}
-    </NavItemList>
+    <>
+      <NavItemList>
+        {routes.map(({ display, route }) => (
+          <NavItem
+            key={route}
+            active={history.location.pathname === route}
+            onClick={() => onClickNavItem(route)}
+          >
+            {display}
+          </NavItem>
+        ))}
+      </NavItemList>
+    </>
   );
 
   return (

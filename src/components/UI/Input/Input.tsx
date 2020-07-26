@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { deviceWidths } from "../../../CONSTANTS";
 
 const Input = styled.input`
   color: ${({ theme }) => theme.palette.text.input};
@@ -13,6 +14,10 @@ const Input = styled.input`
   padding: 1rem 14rem 1rem 8rem;
   border: 0;
   filter: drop-shadow(${({ theme }) => theme.shadows.med});
+
+  @media (max-width: ${deviceWidths.tablet}) {
+    width: 100%;
+  }
 `;
 
 export default Input;

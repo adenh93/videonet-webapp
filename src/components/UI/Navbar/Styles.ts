@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { deviceWidths } from "../../../CONSTANTS";
 
 export const Nav = styled.nav`
   position: absolute;
@@ -24,6 +25,10 @@ export const NavItemList = styled.ul`
   vertical-align: top;
   transform: translateY(60%);
   list-style: none;
+
+  @media (max-width: ${deviceWidths.tablet}) {
+    display: none;
+  }
 `;
 
 interface NavItemProps {
@@ -47,4 +52,8 @@ export const NavItem = styled.li<NavItemProps>`
 export const ProfileImage = styled.img`
   border-radius: 20rem;
   width: 6rem;
+
+  @media (max-width: ${deviceWidths.tablet}) {
+    display: none;
+  }
 `;

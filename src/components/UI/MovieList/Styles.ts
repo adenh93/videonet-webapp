@@ -4,7 +4,6 @@ export const ListContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-space-between;
 `;
 
 export const MovieItemContainer = styled.span`
