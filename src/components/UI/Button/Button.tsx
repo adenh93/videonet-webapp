@@ -3,7 +3,7 @@ import { ButtonContainer, StyledButton, ButtonIcon } from "./Styles";
 
 export type ButtonColor = "primary" | "secondary" | "success";
 
-interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   icon?: string;
   color?: ButtonColor;
   outline?: boolean;

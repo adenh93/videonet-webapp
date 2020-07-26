@@ -10,6 +10,7 @@ const theme = {
       primary: "#BA68C8",
       secondary: "#CFD8DC",
       success: "#9CCC65",
+      disabled: "#555",
     },
   },
   fontSize: {

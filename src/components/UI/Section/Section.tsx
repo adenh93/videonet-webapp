@@ -7,7 +7,7 @@ interface SectionProps {
 
 const Section = styled.div<SectionProps>`
   margin-top: ${({ mt = 0 }) => mt}rem;
-  margin-bottom: ${({ mb = 0 }) => mb} rem;
+  margin-bottom: ${({ mb = 0 }) => mb}rem;
 `;
 
 export default Section;

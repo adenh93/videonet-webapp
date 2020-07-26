@@ -10,56 +10,66 @@ export type Scalars = {
 };
 
 export type Query = {
-  __typename?: "Query";
-  search?: Maybe<Array<SearchResult>>;
+  __typename?: 'Query';
+  search: PaginatedResults;
   details: FilmDetails;
 };
 
+
 export type QuerySearchArgs = {
-  query?: Maybe<Scalars["String"]>;
+  query?: Maybe<Scalars['String']>;
   filter?: Maybe<PagingInput>;
 };
 
+
 export type QueryDetailsArgs = {
-  movieId: Scalars["Int"];
+  movieId: Scalars['Int'];
 };
 
 export type PagingInput = {
-  page?: Maybe<Scalars["Int"]>;
+  page?: Maybe<Scalars['Int']>;
+};
+
+export type PaginatedResults = {
+  __typename?: 'PaginatedResults';
+  page: Scalars['Int'];
+  total_results: Scalars['Int'];
+  total_pages: Scalars['Int'];
+  results: Array<SearchResult>;
 };
 
 export type SearchResult = {
-  __typename?: "SearchResult";
-  id: Scalars["Int"];
-  title: Scalars["String"];
-  vote_average: Scalars["Int"];
-  vote_count: Scalars["Int"];
-  release_date: Scalars["String"];
-  poster_path?: Maybe<Scalars["String"]>;
-  backdrop_path?: Maybe<Scalars["String"]>;
+  __typename?: 'SearchResult';
+  id: Scalars['Int'];
+  title: Scalars['String'];
+  vote_average: Scalars['Int'];
+  vote_count: Scalars['Int'];
+  release_date: Scalars['String'];
+  poster_path?: Maybe<Scalars['String']>;
+  backdrop_path?: Maybe<Scalars['String']>;
 };
 
 export type FilmDetails = {
-  __typename?: "FilmDetails";
-  id: Scalars["Int"];
-  title: Scalars["String"];
-  budget: Scalars["Int"];
+  __typename?: 'FilmDetails';
+  id: Scalars['Int'];
+  title: Scalars['String'];
+  budget: Scalars['Int'];
   genres: Array<Genre>;
-  original_language: Scalars["String"];
-  original_title: Scalars["String"];
-  overview?: Maybe<Scalars["String"]>;
-  poster_path?: Maybe<Scalars["String"]>;
-  backdrop_path?: Maybe<Scalars["String"]>;
-  release_date: Scalars["String"];
-  runtime?: Maybe<Scalars["Int"]>;
-  status: Scalars["String"];
-  tagline?: Maybe<Scalars["String"]>;
-  vote_average: Scalars["Int"];
-  vote_count: Scalars["Int"];
+  original_language: Scalars['String'];
+  original_title: Scalars['String'];
+  overview?: Maybe<Scalars['String']>;
+  poster_path?: Maybe<Scalars['String']>;
+  backdrop_path?: Maybe<Scalars['String']>;
+  release_date: Scalars['String'];
+  runtime?: Maybe<Scalars['Int']>;
+  status: Scalars['String'];
+  tagline?: Maybe<Scalars['String']>;
+  vote_average: Scalars['Int'];
+  vote_count: Scalars['Int'];
 };
 
 export type Genre = {
-  __typename?: "Genre";
-  id: Scalars["Int"];
-  name: Scalars["String"];
+  __typename?: 'Genre';
+  id: Scalars['Int'];
+  name: Scalars['String'];
 };

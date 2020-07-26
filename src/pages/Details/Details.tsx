@@ -27,7 +27,7 @@ const Details: React.FC = () => {
   const [watched, setWatched] = useState<boolean>(false);
   const [liked, setLiked] = useState<boolean>(false);
 
-  const { loading, data } = useQuery<Query>(GET_MOVIE_DETAILS, {
+  const { data } = useQuery<Query>(GET_MOVIE_DETAILS, {
     variables: { movieId: +params.movieId },
     onCompleted: (data) => {
       setWatched(isInWatchList(data!.details!.id));
@@ -47,7 +47,7 @@ const Details: React.FC = () => {
   return (
     <Background image={getBackgroundImage()}>
       <Container>
-        {loading ? null : (
+        {!data ? null : (
           <>
             <DetailsContainer>
               <MovieInfo {...data!.details!} />

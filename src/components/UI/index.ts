@@ -6,6 +6,7 @@ import Section from "./Section";
 import MovieList from "./MovieList";
 import MovieListItem from "./MovieListItem";
 import Button from "./Button";
+import ButtonGroup from "./ButtonGroup";
 import Background from "./Background";
 
 export {
@@ -17,5 +18,6 @@ export {
   MovieList,
   MovieListItem,
   Button,
+  ButtonGroup,
   Background,
 };

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { ButtonColor } from "./Button";
 
 export const ButtonContainer = styled.div`
@@ -25,6 +25,15 @@ export const StyledButton = styled.button<StyledButtonProps>`
     outline ? `2px solid ${theme.palette.button[color]}` : "none"};
   filter: drop-shadow(${({ theme }) => theme.shadows.dark});
   padding-left: ${({ icon }) => (icon ? "10%" : 0)};
+
+  &:disabled {
+    cursor: not-allowed;
+    border: ${({ color, outline, theme }) =>
+      outline ? `2px solid ${theme.palette.button.disabled}` : "none"};
+    background: ${({ color, outline, theme }) =>
+      outline ? "none" : theme.palette.button.disabled};
+    color: ${({ theme }) => theme.palette.button.disabled};
+  }
 `;
 
 export const ButtonIcon = styled.img`
