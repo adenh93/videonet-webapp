@@ -2,7 +2,7 @@
 
 This is a repository for the Videonet web application, which is originally a challenge application.
 
-The application is currently deployed via `AWS Lambda` and `API Gateway` at [http://videonet-web.s3-website-ap-southeast-2.amazonaws.com](http://videonet-web.s3-website-ap-southeast-2.amazonaws.com).
+The application is currently deployed via `AWS S3` and `Cloudfront` at [http://videonet-web.s3-website-ap-southeast-2.amazonaws.com](http://videonet-web.s3-website-ap-southeast-2.amazonaws.com).
 
 ## Technology
 
