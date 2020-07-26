@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { BrowseBackground as Background } from "./Styles";
 import { Header, Subheader } from "../../components/Typography";
 import { Content, SearchInput, Section, MovieList } from "../../components/UI";
