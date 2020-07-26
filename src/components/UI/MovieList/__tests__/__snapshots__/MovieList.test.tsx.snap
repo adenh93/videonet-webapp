@@ -12,10 +12,6 @@ exports[`MovieList UI component renders correctly 1`] = `
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-pack: space-justify;
-  -webkit-justify-content: space-space-between;
-  -ms-flex-pack: space-justify;
-  justify-content: space-space-between;
 }
 
 <div

@@ -19,6 +19,12 @@ exports[`Navbar UI component renders correctly 1`] = `
   width: 6rem;
 }
 
+@media (max-width:985px) {
+  .c2 {
+    display: none;
+  }
+}
+
 <nav
   className="c0"
 >

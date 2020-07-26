@@ -8,8 +8,13 @@ exports[`MovieList UI component renders correctly 1`] = `
   height: 25rem;
   -webkit-filter: drop-shadow(0.6rem 0.6rem 0.6rem rgba(0,0,0,0.25));
   filter: drop-shadow(0.6rem 0.6rem 0.6rem rgba(0,0,0,0.25));
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+  -webkit-animation: iusTVN 0.3s;
+  animation: iusTVN 0.3s;
 }
 
 .c0:hover {
@@ -21,6 +26,6 @@ exports[`MovieList UI component renders correctly 1`] = `
 <img
   className="c0"
   onClick={[Function]}
-  src="https://image.tmdb.org/t/p//w185/undefined"
+  src="placeholder.png"
 />
 `;
