@@ -1,2 +1,3 @@
 import Pagination from "./Pagination";
-export { Pagination };
+import ResultsCount from "./ResultsCount";
+export { Pagination, ResultsCount };

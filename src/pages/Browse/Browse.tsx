@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { BrowseBackground as Background } from "./Styles";
 import { Header, Subheader } from "../../components/Typography";
 import { Content, SearchInput, Section, MovieList } from "../../components/UI";
@@ -6,30 +6,30 @@ import { SEARCH_MOVIES } from "../../graphql/query";
 import { useQuery } from "react-apollo";
 import { Query } from "../../graphql/types";
 import { useHistory } from "react-router";
-import { Pagination } from "./components";
+import { Pagination, ResultsCount } from "./components";
 
 const Browse: React.FC = () => {
   const history = useHistory<{ query: string }>();
   const queryState = history.location.state?.query;
 
   const [query, setQuery] = useState<string>(queryState || "");
-  const [filter, setFilter] = useState<{ page: number }>({ page: 1 });
+  const [lastQuery, setLastQuery] = useState<string>(query);
 
   const { loading, error, data, refetch } = useQuery<Query>(SEARCH_MOVIES, {
-    variables: { query: queryState, filter },
+    variables: { query: queryState },
   });
 
-  useEffect(() => {
-    refetch({ query, filter });
-  }, [filter]);
+  const reloadResults = (page: number = 1) =>
+    refetch({ query, filter: { page } });
 
   const onSelectMovie = (id: number) => history.push(`/Details/${id}`);
-  const onClickPrev = () => setFilter({ page: filter.page - 1 });
-  const onClickNext = () => setFilter({ page: filter.page + 1 });
+  const onClickPrev = () => reloadResults(data!.search!.page - 1);
+  const onClickNext = () => reloadResults(data!.search!.page + 1);
 
   const onSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    setFilter({ page: 1 });
+    setLastQuery(query);
+    reloadResults();
   };
 
   const getContents = () => {
@@ -39,21 +39,23 @@ const Browse: React.FC = () => {
     else
       return (
         <>
-          <Subheader>Search Results</Subheader>
-          <Section mt={5}>
+          <ResultsCount query={lastQuery} data={data!.search} />
+          <Section mt={2}>
             <MovieList
               movies={data!.search!.results!}
               onSelectMovie={onSelectMovie}
             />
           </Section>
-          <Section mt={3} mb={5}>
-            <Pagination
-              page={filter.page}
-              totalPages={data!.search!.total_pages}
-              onClickPrev={onClickPrev}
-              onClickNext={onClickNext}
-            />
-          </Section>
+          {data!.search!.results.length ? (
+            <Section mt={3} mb={5}>
+              <Pagination
+                page={data!.search!.page}
+                totalPages={data!.search!.total_pages}
+                onClickPrev={onClickPrev}
+                onClickNext={onClickNext}
+              />
+            </Section>
+          ) : null}
         </>
       );
   };
