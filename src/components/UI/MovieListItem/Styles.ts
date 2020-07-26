@@ -1,6 +1,4 @@
 import styled, { keyframes } from "styled-components";
-import { deviceWidths } from "../../../CONSTANTS";
-
 const entry = keyframes`
   from {
     transform: scaleX(0);

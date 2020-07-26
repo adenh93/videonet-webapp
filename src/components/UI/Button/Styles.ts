@@ -25,7 +25,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
     outline ? `2px solid ${theme.palette.button[color]}` : "none"};
   filter: drop-shadow(${({ theme }) => theme.shadows.dark});
   padding-left: ${({ icon }) => (icon ? "10%" : 0)};
-  transition: all 0.5s;
+  transition: transform 0.5s;
 
   &:disabled {
     cursor: not-allowed;
