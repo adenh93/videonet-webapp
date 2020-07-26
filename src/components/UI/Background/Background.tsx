@@ -6,7 +6,7 @@ export const Background = styled.div`
   background-size: cover;
   background-position: top;
   position: relative;
-  overflow-y: scroll;
+  overflow-y: auto;
 `;
 
 export default Background;
