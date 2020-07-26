@@ -1,4 +1,4 @@
-import { FilmDetails } from "../graphql/types";
+import { FilmDetails, SearchResult } from "../graphql/types";
 
 type LocalStorageCollection = "WATCHED_ITEMS" | "LIKED_ITEMS";
 
@@ -11,8 +11,8 @@ export const getItems = <R>(type: LocalStorageCollection): R[] => {
   return JSON.parse(items) as R[];
 };
 
-export const getWatchList = (): FilmDetails[] =>
-  getItems<FilmDetails>("WATCHED_ITEMS");
+export const getWatchList = (): SearchResult[] =>
+  getItems<SearchResult>("WATCHED_ITEMS");
 
 export const isInWatchList = (movieId: number): boolean =>
   getWatchList().find((m) => m.id === movieId) !== undefined;

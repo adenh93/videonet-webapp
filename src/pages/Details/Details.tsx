@@ -30,8 +30,8 @@ const Details: React.FC = () => {
   const { loading, data } = useQuery<Query>(GET_MOVIE_DETAILS, {
     variables: { movieId: +params.movieId },
     onCompleted: (data) => {
-      setWatched(isLiked(data!.details!.id));
-      setLiked(isInWatchList(data!.details!.id));
+      setWatched(isInWatchList(data!.details!.id));
+      setLiked(isLiked(data!.details!.id));
     },
   });
 
@@ -42,7 +42,7 @@ const Details: React.FC = () => {
 
   const onClickWatched = (): void => setWatched(toggleWatched(data!.details!));
   const onClickLike = (): void => setLiked(toggleLiked(data!.details!.id));
-  const onClickBack = (): void => history.push("/Browse");
+  const onClickBack = (): void => history.goBack();
 
   return (
     <Background image={getBackgroundImage()}>
